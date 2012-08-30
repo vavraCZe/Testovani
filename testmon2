@@ -1,0 +1,42 @@
+term.clear()
+term.setCursorPos(1,1)
+
+write("left/right/back/top/bottom: ")
+vyber = read()  -- načte polohu monitoru
+
+term.clear()
+term.setCursorPos(1,1)
+
+write("Velikost pisma (1 - 5): ")
+velikost = read()
+
+term.clear()
+term.setCursorPos(1,1)
+
+write("Velikost odsazeni: ")
+od = read()
+
+term.clear()
+term.setCursorPos(1,1)
+
+write("Na radek?: ")
+dolu = read()
+
+term.clear()
+term.setCursorPos(1,1)
+
+write("Casovy format(24 - true,12 - false): ")  -- Musi být ve formátu true/false
+format = read()
+
+
+        print("Zapinam hodiny")  -- Pro kontrolu
+        sleep(3)
+        mon = peripheral.wrap(vyber) -- Vyber musi byt v "", aby fungoval(1. problém)
+        mon.setTextScale(velikost)
+                term.redirect(left)
+                        while true do
+                                sleep(0)
+                term.setCursorPos(od,dolu)
+                        write(textutils.formatTime(os.time(),format))
+                end
+        term.restore()
