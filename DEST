@@ -1,0 +1,72 @@
+term.clear()
+term.setCursorPos(1,1)
+
+write("rychlost (min 0): ")
+r = read()   -- Promenna r pro cas
+
+dest=peripheral.wrap("right")
+dest.clear()
+while true do
+   if c == 20 then  -- Pokud se naplni C do 20, bude nasledovat 15s pauza na prehanku
+      sleep(15)
+      c = 0  -- c je pro prehanky
+   else
+
+   if c == 1 then  -- Snazimse po kazdem prubehu scitat r+0.1, tak aby pri dosahu 1, se pricetl k r
+      r = r+c  -- Po pricteny se celkovy dest spomalí
+      print("plus 1 na c")  -- potvrzení do terminálu, že vše jde jak má
+   else
+
+dest.setTextScale(2)
+dest.setCursorPos(1,1)
+     dest.write("(______________________)")
+dest.setCursorPos(1,12)
+     dest.write("________________________")
+   dest.setCursorPos(2,2)
+     dest.write("I  o  I  I  o      I  o")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,3)
+     dest.write(" I  o   I   I   o  I  ")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,4)
+     dest.write("I  o o  I    o  I   o")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,5)
+     dest.write("      I   o   I   o I")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,6)
+     dest.write("I   o   I    o   I   o")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,7)
+     dest.write("I  o o  I    o  I   o")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,8)
+     dest.write("I  o  I  I  o      I  o")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,9)
+     dest.write("      I   o   I   o I")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,10)
+     dest.write("I  o o  I    o  I  ")
+sleep(r)
+dest.clearLine(line)
+   dest.setCursorPos(2,11)
+     dest.write("V   VV   V    V    V  ")
+c = r+0.1  -- Čas přeháňky se sčítá do r, zároveň se čeká na velikost 1 a velikost 20 (chyba musím předelat)
+                         -- Reset proměnné, c nedosáhne na 20, bude se neustále měnit
+sleep(r)
+dest.clearLine(line)  -- smaže poslední řádek
+sleep(r)
+
+end
+end
+end
+term.restore()
