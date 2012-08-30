@@ -1,0 +1,97 @@
+term.clear()
+term.setCursorPos(1,1)
+
+write("left/right/back/top/bottom: ")
+vyber = read()
+
+term.clear()
+term.setCursorPos(1,1)
+
+write("Velikost pisma (1 - 5): ")
+velikost = read()
+
+term.clear()
+term.setCursorPos(1,1)
+
+write("Velikost odsazeni: ")
+od = read()
+
+term.clear()
+term.setCursorPos(1,1)
+
+write("Na radek?: ")
+dolu = read()
+
+term.clear()
+term.setCursorPos(1,1)
+
+write("Casovy format(24 - true,12 - false): ")
+format = read()
+
+print("1")
+
+while true do
+
+if vyber == left then
+        print("Zapinam hodiny")
+        sleep(3)
+        mon = peripheral.wrap("left")
+        mon.setTextScale(velikost)
+                term.redirect(left)
+                        while true do
+                                sleep(0)
+                term.setCursorPos(od,dolu)
+                        write(textutils.formatTime(os.time(),format))
+                end
+        term.restore()
+elseif vyber == right then
+        print("Zapinam hodiny")
+        sleep(3)
+        mon = peripheral.wrap("right")
+        mon.setTextScale(velikost)
+                term.redirect(right)
+                        while true do
+                                sleep(0)
+                term.setCursorPos(od,dolu)
+                        write(textutils.formatTime(os.time(),format))
+                end
+        term.restore()
+elseif vyber == back then
+        print("Zapinam hodiny")
+        sleep(3)
+        mon = peripheral.wrap("back")
+        mon.setTextScale(velikost)
+                term.redirect(back)
+                        while true do
+                                sleep(0)
+                term.setCursorPos(od,dolu)
+                        write(textutils.formatTime(os.time(),format))
+                end
+        term.restore()      
+elseif vyber == top then
+        print("Zapinam hodiny")
+        sleep(3)
+        mon = peripheral.wrap("top")
+        mon.setTextScale(velikost)
+                term.redirect(top)
+                        while true do
+                                sleep(0)
+                term.setCursorPos(od,dolu)
+                        write(textutils.formatTime(os.time(),format))
+                end
+        term.restore()   
+elseif vyber == bottom then
+        print("2")
+        print("Zapinam hodiny")
+        sleep(3)
+        mon = peripheral.wrap("bottom")
+        mon.setTextScale(velikost)
+                term.redirect(bottom)
+                        while true do
+                                sleep(0)
+                term.setCursorPos(od,dolu)
+                        write(textutils.formatTime(os.time(),format))
+                end
+        term.restore()
+end
+end
