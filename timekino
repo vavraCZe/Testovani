@@ -6,11 +6,5 @@ term.redirect(p)
             if time == 10 then
                 shell.run("kinofilm")
             else
-                sleep(0)
-                    p.setTextScale(5)
-                    term.setCursorPos(6,4)
-                        write(textutils.formatTime(os.time(),true))
-                        
-            end
         end
 term.restore()
