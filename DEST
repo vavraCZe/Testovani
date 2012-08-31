@@ -12,8 +12,9 @@ while true do
       c = 0  -- c je pro prehanky
    else
 
-   if c == 1 then  -- Snazimse po kazdem prubehu scitat r+0.1, tak aby pri dosahu 1, se pricetl k r
+   if b == 1 then  -- Snazimse po kazdem prubehu scitat r+0.1, tak aby pri dosahu 1, se pricetl k r
       r = r+c  -- Po pricteny se celkovy dest spomalí
+      b = 0  -- vzdy musí byt resetované
       print("plus 1 na c")  -- potvrzení do terminálu, že vše jde jak má
    else
 
@@ -60,8 +61,7 @@ sleep(r)
 dest.clearLine(line)
    dest.setCursorPos(2,11)
      dest.write("V   VV   V    V    V  ")
-c = r+0.1  -- Čas přeháňky se sčítá do c, zároveň se čeká na velikost 1 a velikost 20 (chyba musím předelat)
-                         -- Reset proměnné, c nedosáhne na 20, bude se neustále měnit
+b = b+0.1  -- Čas přeháňky se sčítá do b, po deseti průchodech se resetuje b a jede znovu s pomalejším časem
 sleep(r)
 dest.clearLine(line)  -- smaže poslední řádek
 sleep(r)
