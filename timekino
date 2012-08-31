@@ -6,5 +6,6 @@ term.redirect(p)
             if time == 10 then
                 shell.run("kinofilm")
             else
+            end
         end
 term.restore()
