@@ -1,0 +1,14 @@
+p = peripheral.wrap("top")
+
+term.redirect(p)
+        while true do
+            if time == 10:00 then
+                shell.run("kinofilm")
+            else
+                sleep(0)
+                    p.setTextScale(5)
+                    term.setCursorPos(3,1)
+                        write(textutils.formatTime(os.time(),true))
+            end
+        end
+term.restore()
