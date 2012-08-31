@@ -60,7 +60,7 @@ sleep(r)
 dest.clearLine(line)
    dest.setCursorPos(2,11)
      dest.write("V   VV   V    V    V  ")
-c = r+0.1  -- Čas přeháňky se sčítá do r, zároveň se čeká na velikost 1 a velikost 20 (chyba musím předelat)
+c = r+0.1  -- Čas přeháňky se sčítá do c, zároveň se čeká na velikost 1 a velikost 20 (chyba musím předelat)
                          -- Reset proměnné, c nedosáhne na 20, bude se neustále měnit
 sleep(r)
 dest.clearLine(line)  -- smaže poslední řádek
