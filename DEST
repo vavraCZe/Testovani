@@ -8,6 +8,7 @@ dest=peripheral.wrap("right")
 dest.clear()
 while true do
    if c == 20 then  -- Pokud se naplni C do 20, bude nasledovat 15s pauza na prehanku
+      print("c==20")
       sleep(15)
       c = 0  -- c je pro prehanky
    else
@@ -15,7 +16,7 @@ while true do
    if b == 1 then  -- Snazimse po kazdem prubehu scitat r+0.1, tak aby pri dosahu 1, se pricetl k r
       r = r+c  -- Po pricteny se celkovy dest spomalí
       b = 0  -- vzdy musí byt resetované
-      print("plus 1 na c")  -- potvrzení do terminálu, že vše jde jak má
+      print("b==1")  -- potvrzení do terminálu, že vše jde jak má
    else
 
 dest.setTextScale(2)
