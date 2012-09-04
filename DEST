@@ -2,21 +2,23 @@ term.clear()
 term.setCursorPos(1,1)
 
 write("rychlost (min 0): ")
-r = read()   -- Promenna r pro cas
+r = read()
+b = 0
+c = 0
 
 dest=peripheral.wrap("right")
 dest.clear()
 while true do
-   if c == 20 then  -- Pokud se naplni C do 20, bude nasledovat 15s pauza na prehanku
+   if c == 20 then
       print("c==20")
       sleep(15)
-      c = 0  -- c je pro prehanky
+      c = 0
    else
 
-   if b == 1 then  -- Snazimse po kazdem prubehu scitat r+0.1, tak aby pri dosahu 1, se pricetl k r
-      r = r+c  -- Po pricteny se celkovy dest spomalí
-      b = 0  -- vzdy musí byt resetované
-      print("b==1")  -- potvrzení do terminálu, že vše jde jak má
+   if b == 1 then
+      r = r+1
+      b = 0
+      print("b==1")
    else
 
 dest.setTextScale(2)
@@ -62,9 +64,12 @@ sleep(r)
 dest.clearLine(line)
    dest.setCursorPos(2,11)
      dest.write("V   VV   V    V    V  ")
-b = b+0.1  -- Čas přeháňky se sčítá do b, po deseti průchodech se resetuje b a jede znovu s pomalejším časem
+
+b = b+1
+c = c+1
+
 sleep(r)
-dest.clearLine(line)  -- smaže poslední řádek
+dest.clearLine(line)
 sleep(r)
 
 end
