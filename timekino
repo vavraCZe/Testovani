@@ -8,7 +8,7 @@ term.redirect(p)
                 p.clear()
                 p.setTextScale(1)
                 p.setCursorPos(1,1)
-                shell.run("kinofilm")
+                shell.run("kinofilm")                
             elseif time == 10 then
                 p.clear()
                 shell.run("kinofilm")
