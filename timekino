@@ -1,9 +1,13 @@
 p = peripheral.wrap("top")
+p.setTextScale(5)
+p.setCursorPos(1,3)
+ p.write("Kino zacina v 10:00")
 
 term.redirect(p)
         while true do
             time = os.time()
             if time == 10 then
+                p.clear()
                 shell.run("kinofilm")
             else
             end
