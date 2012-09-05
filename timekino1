@@ -1,0 +1,27 @@
+p = peripheral.wrap("top")
+
+term.redirect(p)
+        while true do
+            sleep(1)
+            local time = os.time()
+                function Monitor(p)
+                    if rs.getInput("back") == true then
+                        p.clear()
+                        p.setTextScale(1)
+                        p.setCursorPos(1,1)
+                        shell.run("kinofilm")
+                        return p(p)
+                    elseif time == 10 then
+                        p.clear()
+                        shell.run("kinofilm")
+                        return p(p)
+                    elseif rs.getInput("back") == false then
+                        p.clear()
+                        p.setTextScale(5)
+                        p.setCursorPos(6,4)
+                        write(textutils.formatTime(os.time(),true))  
+                        return p(p)     
+                    end
+                end
+        end
+term.restore()
