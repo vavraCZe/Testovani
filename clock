@@ -1,0 +1,9 @@
+amon = peripheral.wrap("side") -- do side dej left/right/back/bottom/top
+amon.setTextScale(5) -- velikost 1-5 (5 je 1 rada monitoru)
+    term.redirect(amon)
+        while true do
+            sleep(0)
+    term.setCursorPos(3,1) -- Kdyz mas 5 monitoru, da to do prostred. 3 odsazení a 1 řádek
+        write(textutils.formatTime(os.time(),true)) -- pokud dáš true tak 24h a pokud false tak 12h
+    end
+term.restore()
